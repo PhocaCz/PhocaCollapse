@@ -1,0 +1,16 @@
+{
+	"author": "Jan Pavelka (www.phoca.cz)",
+	"authorUrl": "https://www.phoca.cz",
+	"copyright": "Jan Pavelka",
+	"license": "GNU/GPL",
+	"projectName": "PhocaCollapse",
+	"extensionName": "Phoca Collapse System Plugin",
+	"projectInitials" : "PFO",				  
+	"description": "Phoca Collapse System Plugin is a Joomla! CMS Plugin. It adds the ability to collapse specific form field groups. So that they can be better ordered.",
+	"projectUrl": "https://www.phoca.cz/phoca-collapse-system-plugin",
+	"projectDocumentationUrl": "https://www.phoca.cz/documentation/category/100-phoca-collapse-system-plugin",
+	"projectDemo" : {
+		"Demo": "https://www.phoca.cz/"
+	},
+	"projectColor": "#895ED1"
+}
