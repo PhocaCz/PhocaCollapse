@@ -1,0 +1,22 @@
+.phCollapseClick {
+	float: right;
+}
+.subform-repeatable-group.ph-collapse-hidden div.control-group {
+	display: none;
+}
+.subform-repeatable-group.ph-collapse-hidden {
+	padding: 1em;
+}
+
+.ph-collapse-title {
+	font-weight: bold;
+	padding: 1em;
+	margin:0;
+	background: #ffde7d;
+	border-radius: 3px;
+	
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50ch;
+}
