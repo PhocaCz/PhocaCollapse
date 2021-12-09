@@ -8,7 +8,7 @@
 
 
 
-Phoca Collapse System Plugin is a Joomla! CMS Plugin. It adds the ability to collapse specific form field groups. So that they can be better ordered.
+Phoca Collapse System Plugin is a Joomla! CMS Plugin. It adds the ability to hide Joomla subform content. So that subforms can be better sorted.
 
 
 
