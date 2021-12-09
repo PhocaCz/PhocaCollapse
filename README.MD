@@ -2,7 +2,7 @@
 
 
 
-![Phoca Collapse System Plugin](https://github.com/PhocaCz/PhocaCollapse/blob/master/phocacollapse.png?raw=true)
+![Phoca Collapse System Plugin](https://github.com/PhocaCz/PhocaCollapse/blob/main/phocacollapse.png?raw=true)
 
 # Phoca Collapse System Plugin
 

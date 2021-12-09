@@ -46,6 +46,6 @@
 	</config>
 
 	<updateservers>
-		<server type="extension" name="PLG_SYSTEM_PHOCACOLLAPSE" priority="1"><![CDATA[https://raw.githubusercontent.com/PhocaCz/PhocaCollapse/master/manifest.xml]]></server>
+		<server type="extension" name="PLG_SYSTEM_PHOCACOLLAPSE" priority="1"><![CDATA[https://raw.githubusercontent.com/PhocaCz/PhocaCollapse/main/manifest.xml]]></server>
 	</updateservers>
 </extension>

@@ -12,5 +12,6 @@
 	"projectDemo" : {
 		"Demo": "https://www.phoca.cz/"
 	},
-	"projectColor": "#895ED1"
+	"projectColor": "#895ED1",
+	"projectBranch": "main"
 }
