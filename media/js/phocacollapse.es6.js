@@ -10,19 +10,19 @@
  
 document.addEventListener("DOMContentLoaded", () => { 
 
-	const btnToggle = document.querySelectorAll(".phCollapseClick");
+	//const btnToggle = document.querySelectorAll(".phCollapseClick");
 
-	// Search all buttons
-	btnToggle.forEach(elBtn => {
-
+	// Search all buttons and accept even dynamically created buttons
+	document.addEventListener('click',function(event){
+				
 		// Apply changes to clicked area only
-		elBtn.addEventListener('click',(event) => {
+		if(event.target && event.target.className == 'phCollapseClick'){		
 
-			event.preventDefault();
+			//event.preventDefault();
 
-			const targetElement = event.target || event.srcElement;
-        	const collapseWrapper = targetElement.parentNode.parentNode;
-			const group = collapseWrapper.querySelectorAll('.subform-repeatable-group');
+			const targetElement 	= event.target;// || event.srcElement;
+        	const collapseWrapper 	= targetElement.parentNode.parentNode;
+			const group 			= collapseWrapper.querySelectorAll('.subform-repeatable-group');
 
 			// Remove all titles if added previously by toggle actions
 			removeElements = collapseWrapper.querySelectorAll(".ph-collapse-title");
@@ -50,15 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
 							if (typeof elChild.children !== 'undefined' && elChild.children[0] && elChild.children[0].classList.contains('control-label')) {
 								if(elChild.children[0].querySelector('label') !== 'undefined') {
 									
-									
-			
 									let title = elChild.children[0].querySelector('label').textContent;
 			
-									
 									if (elChild.children[1].querySelector('input') !== null && elChild.children[1].querySelector('input').value != '') {
 										title = title + ': ' + elChild.children[1].querySelector('input').value;
-									} else if (elChild.children[1].querySelector('textarea').textContent != '') {
+									} else if (elChild.children[1].querySelector('textarea') != null && elChild.children[1].querySelector('textarea').textContent != '') {
 										title = title + ': ' + elChild.children[1].querySelector('textarea').textContent;
+									} else if (elChild.children[1].querySelector('select') !== null &&  elChild.children[1].querySelector('select').selectedOptions.length > 0) {
+										title = title + ': ' + elChild.children[1].querySelector('select').selectedOptions[0].text;
 									}
 			
 									if (title != '') {
@@ -67,7 +66,6 @@ document.addEventListener("DOMContentLoaded", () => {
 										div.classList.add("ph-collapse-title");
 										div.innerHTML = title.trim();
 										
-										
 										el.appendChild(div);
 										textApplied = 1;
 									}
@@ -75,8 +73,40 @@ document.addEventListener("DOMContentLoaded", () => {
 							}
 						}
 					});
+
+					/*
+					Possible alternative - still not working with sub sub forms
+					childrenArrray.forEach(function(elChild){
+						if (textApplied == 0) {
+						  // elChild.children is child for div.control-group
+						  // we try to find child label and child input name or textarea value
+						  if (typeof elChild.children !== 'undefined') {
+							let elcc = elChild.children[0].children[0];
+							if ( elcc.children[0]  !== 'undefined' && elcc.children[0].classList.contains('control-label')) {
+							  if(elcc.children[0].querySelector('label') !== 'undefined') {
+								let title = elcc.querySelector('label').textContent;
+								if (elcc.children[1].querySelector('input') !== null && elcc.children[1].querySelector('input').value != '') {
+								  title = title + ': ' + elcc.children[1].querySelector('input').value;
+								} else if (elcc.children[1].querySelector('textarea') !== null &&  elcc.children[1].querySelector('textarea').textContent != '') {
+								  title = title + ': ' + elcc.children[1].querySelector('textarea').textContent;
+								} else if (elcc.children[1].querySelector('select') !== null &&  elcc.children[1].querySelector('select').selectedOptions.length > 0) {
+								  title = title + ': ' + elcc.children[1].querySelector('select').selectedOptions[0].text;
+								}
+								if (title != '') {
+								  var div = document.createElement('div');
+								  div.classList.add("ph-collapse-title");
+								  div.innerHTML = title.trim();
+								  el.appendChild(div);
+								  textApplied = 1;
+								}
+							  }
+							}
+						  }
+						}
+					  });
+					*/
 				}				
 			})
-		})
+		}
 	})
 });

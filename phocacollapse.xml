@@ -2,12 +2,12 @@
 <extension type="plugin" group="system" method="upgrade" version="4.0">
 	<name>plg_system_phocacollapse</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>09/12/2021</creationDate>
+	<creationDate>11/12/2021</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>4.0.0Alpha</version>
+	<version>4.0.0Beta</version>
 	<description>PLG_SYSTEM_PHOCACOLLAPSE_DESCRIPTION</description>
 	<projectName>PhocaCollapse</projectName>
 
@@ -21,7 +21,6 @@
 		<folder>models</folder>
 		<filename plugin="phocacollapse">phocacollapse.php</filename>
 		<filename plugin="phocacollapse">index.html</filename>
-		<filename plugin="phocacollapse">manifest.xml</filename>
 	</files>
 
 	<languages>

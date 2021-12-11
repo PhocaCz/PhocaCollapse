@@ -45,7 +45,7 @@ class plgSystemPhocaCollapse extends JPlugin
 		$buffer = $app->getBody();
 
 		$from = '<div class="subform-repeatable-wrapper subform-layout">';
-		$to   = $from . '<div class="ph-collapse"><a href="#" class="phCollapseClick">' . Text::_('PLG_SYSTEM_PHOCACOLLAPSE_SHOW_HIDE') . '</a></div>';
+		$to   = $from . '<div class="ph-collapse"><a href="javascript:void(0)" class="phCollapseClick">' . Text::_('PLG_SYSTEM_PHOCACOLLAPSE_SHOW_HIDE') . '</a></div>';
 
 		$buffer = str_replace($from, $to, $buffer);
 
