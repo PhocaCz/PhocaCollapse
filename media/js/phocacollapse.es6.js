@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.addEventListener('click',function(event){
 				
 		// Apply changes to clicked area only
-		if(event.target && event.target.className == 'phCollapseClick'){		
+		//if(event.target && event.target.className == 'phCollapseClick'){
+			if(event.target && event.target.getAttribute('data-name') == 'phCollapseClick'){		
 
 			//event.preventDefault();
-
 			const targetElement 	= event.target;// || event.srcElement;
         	const collapseWrapper 	= targetElement.parentNode.parentNode;
 			const group 			= collapseWrapper.querySelectorAll('.subform-repeatable-group');

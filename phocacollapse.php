@@ -42,10 +42,35 @@ class plgSystemPhocaCollapse extends JPlugin
 			return true;
 		}
 
+		$text_format 		= $this->params->get('text_format', 1);
+
+		$text = Text::_('PLG_SYSTEM_PHOCACOLLAPSE_SHOW_HIDE');
+		$class = 'phCollapseClick';
+		$icon = '<span class="icon-eye" aria-hidden="true"></span>';
+		
+		switch($text_format){
+
+			case 2:
+				//$text = $text;
+			break;
+
+			case 3:
+				$text = '<span class="icon-eye icon-white" aria-hidden="true" style="pointer-events: none;"></span>';
+				$class = 'group-show btn btn-primary btn-sm phCollapseClick';
+			break;
+
+			case 1:
+			default:
+				$text = $icon . ' ' . $text;
+			break;
+		}
+
+
+
 		$buffer = $app->getBody();
 
 		$from = '<div class="subform-repeatable-wrapper subform-layout">';
-		$to   = $from . '<div class="ph-collapse"><a href="javascript:void(0)" class="phCollapseClick">' . Text::_('PLG_SYSTEM_PHOCACOLLAPSE_SHOW_HIDE') . '</a></div>';
+		$to   = $from . '<div class="ph-collapse"><a href="javascript:void(0)" class="'.$class.'" data-name="phCollapseClick">' . $text . '</a></div>';
 
 		$buffer = str_replace($from, $to, $buffer);
 
