@@ -20,3 +20,15 @@
     text-overflow: ellipsis;
     max-width: 50ch;
 }
+
+
+/* Menu */
+table.table tr.ph-collapse-hidden-menu th div,
+table.table tr.ph-collapse-hidden-menu td div {
+	display: none;
+}
+/* Article */
+table.table tr.ph-collapse-hidden-article th div div,
+table.table tr.ph-collapse-hidden-article td div div{
+	display: none;
+}

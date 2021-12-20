@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				
 		// Apply changes to clicked area only
 		//if(event.target && event.target.className == 'phCollapseClick'){
-			if(event.target && event.target.getAttribute('data-name') == 'phCollapseClick'){		
+		if(event.target && event.target.getAttribute('data-name') == 'phCollapseClick'){		
 
 			//event.preventDefault();
 			const targetElement 	= event.target;// || event.srcElement;
@@ -73,39 +73,25 @@ document.addEventListener("DOMContentLoaded", () => {
 							}
 						}
 					});
-
-					/*
-					Possible alternative - still not working with sub sub forms
-					childrenArrray.forEach(function(elChild){
-						if (textApplied == 0) {
-						  // elChild.children is child for div.control-group
-						  // we try to find child label and child input name or textarea value
-						  if (typeof elChild.children !== 'undefined') {
-							let elcc = elChild.children[0].children[0];
-							if ( elcc.children[0]  !== 'undefined' && elcc.children[0].classList.contains('control-label')) {
-							  if(elcc.children[0].querySelector('label') !== 'undefined') {
-								let title = elcc.querySelector('label').textContent;
-								if (elcc.children[1].querySelector('input') !== null && elcc.children[1].querySelector('input').value != '') {
-								  title = title + ': ' + elcc.children[1].querySelector('input').value;
-								} else if (elcc.children[1].querySelector('textarea') !== null &&  elcc.children[1].querySelector('textarea').textContent != '') {
-								  title = title + ': ' + elcc.children[1].querySelector('textarea').textContent;
-								} else if (elcc.children[1].querySelector('select') !== null &&  elcc.children[1].querySelector('select').selectedOptions.length > 0) {
-								  title = title + ': ' + elcc.children[1].querySelector('select').selectedOptions[0].text;
-								}
-								if (title != '') {
-								  var div = document.createElement('div');
-								  div.classList.add("ph-collapse-title");
-								  div.innerHTML = title.trim();
-								  el.appendChild(div);
-								  textApplied = 1;
-								}
-							  }
-							}
-						  }
-						}
-					  });
-					*/
 				}				
+			})
+		} else if (event.target && event.target.getAttribute('data-name') == 'phCollapseClickMenu'){
+			
+			const targetElement 	= event.target;// || event.srcElement;
+        	const collapseWrapper 	= targetElement.parentNode.parentNode;
+			const group 			= collapseWrapper.querySelectorAll('.js-draggable tr');
+
+			group.forEach(el => {
+				const resultToggleMenu = el.classList.toggle('ph-collapse-hidden-menu');
+			})
+		} else if (event.target && event.target.getAttribute('data-name') == 'phCollapseClickArticle'){
+			
+			const targetElement 	= event.target;// || event.srcElement;
+        	const collapseWrapper 	= targetElement.parentNode.parentNode;
+			const group 			= collapseWrapper.querySelectorAll('#articleList tr');
+
+			group.forEach(el => {
+				const resultToggleMenu = el.classList.toggle('ph-collapse-hidden-article');
 			})
 		}
 	})

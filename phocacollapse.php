@@ -47,7 +47,7 @@ class plgSystemPhocaCollapse extends JPlugin
 		$text = Text::_('PLG_SYSTEM_PHOCACOLLAPSE_SHOW_HIDE');
 		$class = 'phCollapseClick';
 		$icon = '<span class="icon-eye" aria-hidden="true"></span>';
-		
+
 		switch($text_format){
 
 			case 2:
@@ -73,6 +73,18 @@ class plgSystemPhocaCollapse extends JPlugin
 		$to   = $from . '<div class="ph-collapse"><a href="javascript:void(0)" class="'.$class.'" data-name="phCollapseClick">' . $text . '</a></div>';
 
 		$buffer = str_replace($from, $to, $buffer);
+
+		$from = '<table class="table" id="itemList">';
+		$to   = $from . '<div class="ph-collapse"><a href="javascript:void(0)" class="'.$class.'" data-name="phCollapseClickMenu">' . $text . '</a></div>';
+
+		$buffer = str_replace($from, $to, $buffer);
+
+
+		$from = '<table class="table itemList" id="articleList">';
+		$to   = $from . '<div class="ph-collapse"><a href="javascript:void(0)" class="'.$class.'" data-name="phCollapseClickArticle">' . $text . '</a></div>';
+
+		$buffer = str_replace($from, $to, $buffer);
+
 
 		$app->setBody($buffer);
 		return true;
