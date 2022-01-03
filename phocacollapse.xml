@@ -2,12 +2,12 @@
 <extension type="plugin" group="system" method="upgrade" version="4.0">
 	<name>plg_system_phocacollapse</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>20/12/2021</creationDate>
+	<creationDate>03/01/2022</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
 	<license>GNU/GPL</license>
-	<version>4.0.1</version>
+	<version>4.0.3</version>
 	<description>PLG_SYSTEM_PHOCACOLLAPSE_DESCRIPTION</description>
 	<projectName>PhocaCollapse</projectName>
 
@@ -43,6 +43,11 @@
 					<option value="1">PLG_SYSTEM_PHOCACOLLAPSE_ICON_TEXT</option>
 					<option value="2">PLG_SYSTEM_PHOCACOLLAPSE_TEXT_ONLY</option>
 					<option value="3">PLG_SYSTEM_PHOCACOLLAPSE_ICON_ONLY</option>
+				</field>
+
+                <field name="frontend_active" type="list" default="0" label="PLG_SYSTEM_PHOCACOLLAPSE_ACTIVE_IN_FRONTEND_LABEL" description="PLG_SYSTEM_PHOCACOLLAPSE_ACTIVE_IN_FRONTEND_DESC">
+					<option value="0">PLG_SYSTEM_PHOCACOLLAPSE_NO</option>
+					<option value="1">PLG_SYSTEM_PHOCACOLLAPSE_YES</option>
 				</field>
 
 			</fieldset>

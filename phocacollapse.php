@@ -29,6 +29,11 @@ class plgSystemPhocaCollapse extends JPlugin
 			return true;
 		}
 
+		$frontend_active 		= $this->params->get('frontend_active', 0);
+		if ($frontend_active == 0 && !Factory::getApplication()->isClient('administrator')) {
+			return true;
+		}
+
 		$wa = $app->getDocument()->getWebAssetManager();
 		$wa->registerAndUseScript('plg_system_phocacollapse.phocacollapse', 'media/plg_system_phocacollapse/js/phocacollapse.es6.js', array('version' => 'auto'));
 		$wa->registerAndUseStyle('plg_system_phocacollapse.phocacollapse', 'media/plg_system_phocacollapse/css/phocacollapse.css', array('version' => 'auto'));
@@ -39,6 +44,10 @@ class plgSystemPhocaCollapse extends JPlugin
 
 		$app = Factory::getApplication();
 		if ($app->getDocument()->getType() !== 'html') {
+			return true;
+		}
+		$frontend_active 		= $this->params->get('frontend_active', 0);
+		if ($frontend_active == 0 && !Factory::getApplication()->isClient('administrator')) {
 			return true;
 		}
 
