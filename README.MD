@@ -52,7 +52,7 @@ Phoca Collapse System Plugin is a Joomla! CMS Plugin. It adds the ability to hid
 
 ## Version (Joomla! 3.x)
 
-3.0.0
+3.0.1
 
 ## Version (Joomla! 4.x)
 

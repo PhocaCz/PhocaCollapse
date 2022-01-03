@@ -21,6 +21,7 @@
 		<folder>models</folder>
 		<filename plugin="phocacollapse">phocacollapse.php</filename>
 		<filename plugin="phocacollapse">index.html</filename>
+		<filename plugin="phocacollapse">manifest.xml</filename>
 	</files>
 
 	<languages>
