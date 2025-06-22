@@ -10,11 +10,12 @@
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Plugin\CMSPlugin;
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 jimport( 'joomla.plugin.plugin' );
 
-class plgSystemPhocaCollapse extends JPlugin
+class plgSystemPhocaCollapse extends CMSPlugin
 {
 
 	public function __construct(& $subject, $config) {

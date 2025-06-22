@@ -44,14 +44,22 @@ document.addEventListener("DOMContentLoaded", () => {
 					let textApplied = 0;
 					childrenArrray.forEach(function(elChild){
 						if (textApplied == 0) {
-			
+
 							// elChild.children is child for div.control-group
 							// we try to find child label and child input name or textarea value
-							if (typeof elChild.children !== 'undefined' && elChild.children[0] && elChild.children[0].classList.contains('control-label')) {
+							// 1) without fieldset
+							// 2) with fieldset
+							if ((typeof elChild.children !== 'undefined' && elChild.children[0] && elChild.children[0].classList.contains('control-label'))
+								|| (typeof elChild.children !== 'undefined' && elChild.querySelector('fieldset') &&  elChild.querySelector('fieldset').querySelector('.control-label'))
+							) {
 								if(elChild.children[0].querySelector('label') !== 'undefined') {
-									
+
 									let title = elChild.children[0].querySelector('label').textContent;
-			
+									if (title.trim() == '' && elChild.children[1].querySelector('label') !== null) {
+										// Fieldset
+										title = elChild.children[1].querySelector('label').textContent;
+									}
+
 									if (elChild.children[1].querySelector('input') !== null && elChild.children[1].querySelector('input').value != '') {
 										title = title + ': ' + elChild.children[1].querySelector('input').value;
 									} else if (elChild.children[1].querySelector('textarea') != null && elChild.children[1].querySelector('textarea').textContent != '') {
@@ -59,13 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
 									} else if (elChild.children[1].querySelector('select') !== null &&  elChild.children[1].querySelector('select').selectedOptions.length > 0) {
 										title = title + ': ' + elChild.children[1].querySelector('select').selectedOptions[0].text;
 									}
-			
-									if (title != '') {
-			
+
+									if (title.trim() != '') {
+
 										var div = document.createElement('div');
 										div.classList.add("ph-collapse-title");
 										div.innerHTML = title.trim();
-										
+
 										el.appendChild(div);
 										textApplied = 1;
 									}
