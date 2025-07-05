@@ -51,7 +51,7 @@
 		<downloads>
 			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaCollapse/releases/download/5.1.0/plg_system_phocacollapse_v5.1.0.zip</downloadurl>
 		</downloads>
-		<sha512>ec68ba194a6e15e4ae0ad339c87958b74210ddca011da281edf0cb87f1986052e9f18c723989792c178b21a9f10eb8a61652b9ef4ca17760aa4bd13b0707d9ab</sha512>
+		<sha512>16336ba878502fc8a41887883a87631c4dc0e0d8730bf7b1d917a4fc0162f8e2b7b4ee2bef5d27c5efc8e24c05cbee26220492454f0c6fa81cb4a4cb105e78e4</sha512>
 		<tags>
 			<tag>stable</tag>
 		</tags>

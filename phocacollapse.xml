@@ -2,7 +2,7 @@
 <extension type="plugin" group="system" method="upgrade" version="5.0">
 	<name>plg_system_phocacollapse</name>
 	<author>Jan Pavelka (www.phoca.cz)</author>
-	<creationDate>22/06/2025</creationDate>
+	<creationDate>05/07/2025</creationDate>
 	<authorEmail></authorEmail>
 	<authorUrl>https://www.phoca.cz</authorUrl>
 	<copyright>Jan Pavelka</copyright>
