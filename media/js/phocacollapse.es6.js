@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					const childrenArrray = Array.from(children);
 
 					let textApplied = 0;
+					let title = '';
 					childrenArrray.forEach(function(elChild){
 						if (textApplied == 0) {
 
@@ -54,18 +55,60 @@ document.addEventListener("DOMContentLoaded", () => {
 							) {
 								if(elChild.children[0].querySelector('label') !== 'undefined') {
 
-									let title = elChild.children[0].querySelector('label').textContent;
-									if (title.trim() == '' && elChild.children[1].querySelector('label') !== null) {
+									let titlePrefix = elChild.children[0].querySelector('label').textContent;
+
+									if (titlePrefix.trim() == '' && elChild.children[1].querySelector('label') !== null) {
 										// Fieldset
-										title = elChild.children[1].querySelector('label').textContent;
+										titlePrefix = elChild.children[1].querySelector('label').textContent;
 									}
 
-									if (elChild.children[1].querySelector('input') !== null && elChild.children[1].querySelector('input').value != '') {
-										title = title + ': ' + elChild.children[1].querySelector('input').value;
-									} else if (elChild.children[1].querySelector('textarea') != null && elChild.children[1].querySelector('textarea').textContent != '') {
-										title = title + ': ' + elChild.children[1].querySelector('textarea').textContent;
-									} else if (elChild.children[1].querySelector('select') !== null &&  elChild.children[1].querySelector('select').selectedOptions.length > 0) {
-										title = title + ': ' + elChild.children[1].querySelector('select').selectedOptions[0].text;
+									if (typeof elChild.children[1] !== 'undefined') {
+
+										if (elChild.children[1].querySelector('input') !== null && elChild.children[1].querySelector('input').value != '') {
+											title = titlePrefix + ': ' + elChild.children[1].querySelector('input').value;
+										} else if (elChild.children[1].querySelector('textarea') != null && elChild.children[1].querySelector('textarea').textContent != '') {
+											title = titlePrefix + ': ' + elChild.children[1].querySelector('textarea').textContent;
+										} else if (elChild.children[1].querySelector('select') !== null &&  elChild.children[1].querySelector('select').selectedOptions.length > 0) {
+											title = titlePrefix + ': ' + elChild.children[1].querySelector('select').selectedOptions[0].text;
+										}
+									}
+
+									// Phoca Templates (additional divs in form)
+									if (elChild &&
+										elChild.children &&
+										elChild.children[0] &&
+										elChild.children[0].children) {
+
+										// ROW
+										if (elChild.children[0].children[3] &&
+											elChild.children[0].className == 'phTemplateRow') {
+											var inputEl = elChild.children[0].children[3].querySelector('input');
+
+											if (inputEl && inputEl.value !== '') {
+												var titleFull = inputEl.value;
+												var titleMatch = titleFull.match(/container-[^\s]*/);
+
+												if (titleMatch) {
+													title = titlePrefix + ': ' + titleMatch[0];
+												}
+											}
+										}
+
+										// COLUMN
+										if (elChild.children[0].children[1] &&
+											elChild.children[0].children[1].children &&
+											elChild.children[0].children[1].children[1] &&
+											elChild.children[0].className == 'phTemplateColumn'){
+
+											var inputEl = elChild.children[0].children[1].children[1].querySelector('input');
+											if (inputEl && inputEl.value !== '') {
+												title = titlePrefix + ': ' + inputEl.value;
+											}
+										}
+									}
+
+									if (title == '') {
+										title = titlePrefix;
 									}
 
 									if (title.trim() != '') {

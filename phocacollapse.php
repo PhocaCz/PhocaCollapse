@@ -17,6 +17,7 @@ jimport( 'joomla.plugin.plugin' );
 
 class plgSystemPhocaCollapse extends CMSPlugin
 {
+	protected $autoloadLanguage = true;
 
 	public function __construct(& $subject, $config) {
 		$this->loadLanguage('plg_system_phocacollapse');
@@ -55,6 +56,7 @@ class plgSystemPhocaCollapse extends CMSPlugin
 		$text_format 		= $this->params->get('text_format', 1);
 
 		$text = Text::_('PLG_SYSTEM_PHOCACOLLAPSE_SHOW_HIDE');
+
 		$class = 'phCollapseClick';
 		$icon = '<span class="icon-eye" aria-hidden="true"></span>';
 

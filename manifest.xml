@@ -6,26 +6,6 @@
 		<element>phocacollapse</element>
 		<folder>system</folder>
 		<type>plugin</type>
-		<version>3.0.1</version>
-		<infourl title="Phoca Collapse System Plugin 3.0.1">https://www.phoca.cz/</infourl>
-		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaCollapse/releases/download/3.0.1/plg_system_phocacollapse_v3.0.1.zip</downloadurl>
-		</downloads>
-		<tags>
-			<tag>stable</tag>
-		</tags>
-		<maintainer><![CDATA[ Phoca.cz ]]></maintainer>
-		<maintainerurl>https://www.phoca.cz/</maintainerurl>
-		<section>Updates</section>
-		<targetplatform name="joomla" version="3.([89]|10)"/>
-		<client>site</client>
-	</update>
-	<update>
-		<name><![CDATA[ Phoca Collapse System Plugin ]]></name>
-		<description><![CDATA[ Phoca Collapse System Plugin is a Joomla! CMS Plugin. It adds the ability to hide Joomla subform content. So that subforms can be better sorted. ]]></description>
-		<element>phocacollapse</element>
-		<folder>system</folder>
-		<type>plugin</type>
 		<version>4.0.3</version>
 		<infourl title="Phoca Collapse System Plugin 4.0.3">https://www.phoca.cz/</infourl>
 		<downloads>
@@ -59,6 +39,27 @@
 		<maintainerurl>https://www.phoca.cz/</maintainerurl>
 		<section>Updates</section>
 		<targetplatform name="joomla" version="5\.*"/>
+		<client>site</client>
+	</update>
+	<update>
+		<name><![CDATA[ Phoca Collapse System Plugin ]]></name>
+		<description><![CDATA[ Phoca Collapse System Plugin is a Joomla! CMS Plugin. It adds the ability to hide Joomla subform content. So that subforms can be better sorted. ]]></description>
+		<element>phocacollapse</element>
+		<folder>system</folder>
+		<type>plugin</type>
+		<version>6.0.0</version>
+		<infourl title="Phoca Collapse System Plugin 6.0.0">https://www.phoca.cz/</infourl>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaCollapse/releases/download/6.0.0/plg_system_phocacollapse_v6.0.0.zip</downloadurl>
+		</downloads>
+		<sha512>1176bf08d727b9bf8e963051a3aabdbd4be7c1c83cb4e9e04ae23122cb19a2488403a3dfd8a3cde1dfcbe7bf11357bc6363c1967822efc22485ae6839b482b34</sha512>
+		<tags>
+			<tag>stable</tag>
+		</tags>
+		<maintainer><![CDATA[ Phoca.cz ]]></maintainer>
+		<maintainerurl>https://www.phoca.cz/</maintainerurl>
+		<section>Updates</section>
+		<targetplatform name="joomla" version="(5|6)\.*"/>
 		<client>site</client>
 	</update>
 </updates>
