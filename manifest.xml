@@ -47,12 +47,12 @@
 		<element>phocacollapse</element>
 		<folder>system</folder>
 		<type>plugin</type>
-		<version>6.0.0</version>
-		<infourl title="Phoca Collapse System Plugin 6.0.0">https://www.phoca.cz/</infourl>
+		<version>6.0.1</version>
+		<infourl title="Phoca Collapse System Plugin 6.0.1">https://www.phoca.cz/</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaCollapse/releases/download/6.0.0/plg_system_phocacollapse_v6.0.0.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/PhocaCz/PhocaCollapse/releases/download/6.0.1/plg_system_phocacollapse_v6.0.1.zip</downloadurl>
 		</downloads>
-		<sha512>1176bf08d727b9bf8e963051a3aabdbd4be7c1c83cb4e9e04ae23122cb19a2488403a3dfd8a3cde1dfcbe7bf11357bc6363c1967822efc22485ae6839b482b34</sha512>
+		<sha512>eb231aed14f2d55856f4bc78ed05cca8180f98e2aa1ea5ba5f3c742fa93ab258c7d2064f577e0f43436e0ef6899bf11393a6f846ef9261337bcd027655d848d8</sha512>
 		<tags>
 			<tag>stable</tag>
 		</tags>

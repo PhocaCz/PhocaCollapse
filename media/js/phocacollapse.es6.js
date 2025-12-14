@@ -7,17 +7,17 @@
  * @copyright Copyright (C) Jan Pavelka www.phoca.cz
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
- 
-document.addEventListener("DOMContentLoaded", () => { 
+
+document.addEventListener("DOMContentLoaded", () => {
 
 	//const btnToggle = document.querySelectorAll(".phCollapseClick");
 
 	// Search all buttons and accept even dynamically created buttons
 	document.addEventListener('click',function(event){
-				
+
 		// Apply changes to clicked area only
 		//if(event.target && event.target.className == 'phCollapseClick'){
-		if(event.target && event.target.getAttribute('data-name') == 'phCollapseClick'){		
+		if(event.target && event.target.getAttribute('data-name') == 'phCollapseClick'){
 
 			//event.preventDefault();
 			const targetElement 	= event.target;// || event.srcElement;
@@ -26,13 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			// Remove all titles if added previously by toggle actions
 			removeElements = collapseWrapper.querySelectorAll(".ph-collapse-title");
-			removeElements.forEach(function(elRemove){ 
+			removeElements.forEach(function(elRemove){
 				elRemove.remove();
 			})
 
 			// If toggle is true - active, then remove all control groups with adding ph-collpse-hidden class
 			// But don't hide everything, we need to know at least some title
-			// So try to find title from first 
+			// So try to find title from first
 			group.forEach(el => {
 
 				const resultToggle = el.classList.toggle('ph-collapse-hidden');
@@ -80,16 +80,18 @@ document.addEventListener("DOMContentLoaded", () => {
 										elChild.children[0].children) {
 
 										// ROW
-										if (elChild.children[0].children[3] &&
+										if (elChild.children[0].children[4] &&
 											elChild.children[0].className == 'phTemplateRow') {
-											var inputEl = elChild.children[0].children[3].querySelector('input');
+											var inputEl = elChild.children[0].children[4].querySelector('input');
+
+											titlePrefix = '⏹️';
 
 											if (inputEl && inputEl.value !== '') {
 												var titleFull = inputEl.value;
 												var titleMatch = titleFull.match(/container-[^\s]*/);
 
 												if (titleMatch) {
-													title = titlePrefix + ': ' + titleMatch[0];
+													title = titlePrefix + ' ' + titleMatch[0];
 												}
 											}
 										}
@@ -124,10 +126,10 @@ document.addEventListener("DOMContentLoaded", () => {
 							}
 						}
 					});
-				}				
+				}
 			})
 		} else if (event.target && event.target.getAttribute('data-name') == 'phCollapseClickMenu'){
-			
+
 			const targetElement 	= event.target;// || event.srcElement;
         	const collapseWrapper 	= targetElement.parentNode.parentNode;
 			const group 			= collapseWrapper.querySelectorAll('.js-draggable tr');
@@ -136,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				const resultToggleMenu = el.classList.toggle('ph-collapse-hidden-menu');
 			})
 		} else if (event.target && event.target.getAttribute('data-name') == 'phCollapseClickArticle'){
-			
+
 			const targetElement 	= event.target;// || event.srcElement;
         	const collapseWrapper 	= targetElement.parentNode.parentNode;
 			const group 			= collapseWrapper.querySelectorAll('#articleList tr');
